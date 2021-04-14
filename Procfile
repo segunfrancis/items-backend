@@ -1,0 +1,1 @@
+web: ./build/install/items-backend/bin/items-backend
