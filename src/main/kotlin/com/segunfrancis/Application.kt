@@ -7,7 +7,8 @@ import io.ktor.locations.KtorExperimentalLocationsAPI
 
 @KtorExperimentalLocationsAPI
 fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+    val port = System.getenv("PORT") ?: "8080"
+    embeddedServer(Netty, port = port.toInt(), host = "0.0.0.0") {
         configureRouting()
         configureSerialization()
     }.start(wait = true)
